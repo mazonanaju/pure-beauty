@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Busca de Agendamento - Pure Beauty</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/paginas-internas.css" />
+    <link rel="stylesheet" href="/css/responsivo.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <a href="/view/index.html" class="logo">Pure Beauty</a>
+          <nav>
+            <ul>
+              <li><a href="/view/index.html">Home</a></li>
+              <li><a href="/view/servicos.html">Serviços</a></li>
+              <li><a href="/view/sobre.html">Sobre Nós</a></li>
+              <li><a href="/view/agenda.html" class="active">Agenda</a></li>
+              <li><a href="/view/galeria.html">Resultados</a></li>
+              <li><a href="/view/blog.html">Blog</a></li>
+              <li><a href="/view/contato.html">Contato</a></li>
+            </ul>
+          </nav>
+          <div class="header-buttons">
+            <a href="/view/area-cliente.html" class="btn-secondary"
+              >Área do Cliente</a
+            >
+            <a href="/view/agendamento.html" class="btn-primary"
+              >Agendar Consulta</a
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="pagina-interna">
+      <div class="container">
+        <div class="pagina-header">
+          <h1>Busca de Agendamento</h1>
+          <p>
+            Consulte seus agendamentos usando seu e-mail ou código de
+            confirmação
+          </p>
+        </div>
+
+        <div class="busca-agendamento">
+          <div class="busca-opcoes">
+            <button class="opcao-btn active" data-opcao="email">
+              Buscar por E-mail
+            </button>
+            <button class="opcao-btn" data-opcao="codigo">
+              Buscar por Código
+            </button>
+          </div>
+
+          <div class="busca-form">
+            <form id="formBuscaEmail" class="busca-metodo active">
+              <div class="form-group">
+                <label for="email-busca"
+                  >E-mail utilizado no agendamento:</label
+                >
+                <input type="email" id="email-busca" name="email" required />
+              </div>
+              <button type="submit" class="btn-primary">
+                Buscar Agendamentos
+              </button>
+            </form>
+
+            <form id="formBuscaCodigo" class="busca-metodo">
+              <div class="form-group">
+                <label for="codigo-busca">Código de confirmação:</label>
+                <input
+                  type="text"
+                  id="codigo-busca"
+                  name="codigo"
+                  placeholder="Ex: PB123456"
+                  required
+                />
+              </div>
+              <button type="submit" class="btn-primary">
+                Buscar Agendamento
+              </button>
+            </form>
+          </div>
+
+          <div class="resultados-busca" style="display: none">
+            <h2>Agendamentos Encontrados</h2>
+
+            <div class="agendamentos-lista">
+              <div class="agendamento-resultado">
+                <div class="resultado-info">
+                  <h3>Preenchimento Facial</h3>
+                  <p><strong>Data:</strong> 15/11/2023 às 14:00</p>
+                  <p><strong>Profissional:</strong> Dra. Maria Silva</p>
+                  <p>
+                    <strong>Status:</strong>
+                    <span class="status-confirmado">Confirmado</span>
+                  </p>
+                  <p><strong>Código:</strong> PB123456</p>
+                </div>
+                <div class="resultado-acoes">
+                  <button class="btn-secondary">Ver Detalhes</button>
+                  <button class="btn-cancelar">Cancelar</button>
+                </div>
+              </div>
+
+              <div class="agendamento-resultado">
+                <div class="resultado-info">
+                  <h3>Limpeza de Pele</h3>
+                  <p><strong>Data:</strong> 22/11/2023 às 10:00</p>
+                  <p><strong>Profissional:</strong> Dra. Ana Oliveira</p>
+                  <p>
+                    <strong>Status:</strong>
+                    <span class="status-confirmado">Confirmado</span>
+                  </p>
+                  <p><strong>Código:</strong> PB654321</p>
+                </div>
+                <div class="resultado-acoes">
+                  <button class="btn-secondary">Ver Detalhes</button>
+                  <button class="btn-cancelar">Cancelar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="detalhes-agendamento" style="display: none">
+            <h2>Detalhes do Agendamento</h2>
+
+            <div class="detalhes-content">
+              <div class="detalhes-col">
+                <h3>Informações do Procedimento</h3>
+                <div class="detalhe-item">
+                  <span class="detalhe-label">Procedimento:</span>
+                  <span class="detalhe-valor">Preenchimento Facial</span>
+                </div>
+                <div class="detalhe-item">
+                  <span class="detalhe-label">Data e Hora:</span>
+                  <span class="detalhe-valor">15/11/2023 às 14:00</span>
+                </div>
+                <div class="detalhe-item">
+                  <span class="detalhe-label">Duração:</span>
+                  <span class="detalhe-valor">60 minutos</span>
+                </div>
+                <div class="detalhe-item">
+                  <span class="detalhe-label">Valor:</span>
+                  <span class="detalhe-valor">R$ 800,00</span>
+                </div>
+              </div>
+
+              <div class="detalhes-col">
+                <h3>Informações do Profissional</h3>
+                <div class="detalhe-item">
+                  <span class="detalhe-label">Profissional:</span>
+                  <span class="detalhe-valor">Dra. Maria Silva</span>
+                </div>
+                <div class="detalhe-item">
+                  <span class="detalhe-label">Especialidade:</span>
+                  <span class="detalhe-valor">Dermatologista</span>
+                </div>
+              </div>
+
+              <div class="detalhes-col">
+                <h3>Informações do Cliente</h3>
+                <div class="detalhe-item">
+                  <span class="detalhe-label">Nome:</span>
+                  <span class="detalhe-valor">Maria Silva</span>
+                </div>
+                <div class="detalhe-item">
+                  <span class="detalhe-label">E-mail:</span>
+                  <span class="detalhe-valor">maria@email.com</span>
+                </div>
+                <div class="detalhe-item">
+                  <span class="detalhe-label">Telefone:</span>
+                  <span class="detalhe-valor">(11) 99999-9999</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="detalhes-acoes">
+              <button class="btn-primary" id="btnVoltarLista">
+                Voltar para a lista
+              </button>
+              <button class="btn-secondary">Imprimir Comprovante</button>
+              <button class="btn-cancelar">Cancelar Agendamento</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="busca-ajuda">
+          <h2>Precisa de ajuda?</h2>
+          <p>
+            Se você não encontrar seu agendamento ou tiver dúvidas, entre em
+            contato conosco:
+          </p>
+          <div class="ajuda-contato">
+            <p><strong>Telefone:</strong> (11) 9999-9999</p>
+            <p><strong>WhatsApp:</strong> (11) 8888-8888</p>
+            <p><strong>E-mail:</strong> agendamentos@purebeauty.com.br</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-col">
+            <h3>Pure Beauty</h3>
+            <p>
+              Excelência em tratamentos estéticos com segurança e resultados
+              comprovados.
+            </p>
+            <div class="social-links">
+              <a href="#"><span>FB</span></a>
+              <a href="#"><span>IG</span></a>
+              <a href="#"><span>WA</span></a>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h3>Serviços</h3>
+            <ul>
+              <li><a href="/view/servicos.html">Preenchimento Facial</a></li>
+              <li><a href="/view/servicos.html">Botox</a></li>
+              <li><a href="/view/servicos.html">Limpeza de Pele</a></li>
+              <li><a href="/view/servicos.html">Depilação a Laser</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Links Rápidos</h3>
+            <ul>
+              <li><a href="/view/sobre.html">Sobre Nós</a></li>
+              <li><a href="/view/blog.html">Blog</a></li>
+              <li><a href="/view/contato.html">Contato</a></li>
+              <li>
+                <a href="/view/politicas.html">Políticas de Privacidade</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Contato</h3>
+            <ul class="footer-contato">
+              <li><span>📍</span> Av. Paulista, 1000 - São Paulo</li>
+              <li><span>📞</span> (11) 9999-9999</li>
+              <li><span>✉️</span> contato@purebeauty.com.br</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>
+            &copy; 2023 Pure Beauty - Clínica de Estética. Todos os direitos
+            reservados.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/js/script.js"></script>
+    <script>
+      // Controle da busca de agendamentos
+      document.addEventListener("DOMContentLoaded", function () {
+        const opcaoBtns = document.querySelectorAll(".opcao-btn");
+        const buscaMetodos = document.querySelectorAll(".busca-metodo");
+        const formBuscaEmail = document.getElementById("formBuscaEmail");
+        const formBuscaCodigo = document.getElementById("formBuscaCodigo");
+        const resultadosBusca = document.querySelector(".resultados-busca");
+        const detalhesAgendamento = document.querySelector(
+          ".detalhes-agendamento"
+        );
+        const btnVoltarLista = document.getElementById("btnVoltarLista");
+
+        // Alternar entre métodos de busca
+        opcaoBtns.forEach((btn) => {
+          btn.addEventListener("click", function () {
+            const opcao = this.getAttribute("data-opcao");
+
+            // Remover classe active de todos os botões e formulários
+            opcaoBtns.forEach((b) => b.classList.remove("active"));
+            buscaMetodos.forEach((m) => m.classList.remove("active"));
+
+            // Adicionar classe active ao botão clicado
+            this.classList.add("active");
+
+            // Mostrar o formulário correspondente
+            document
+              .getElementById(
+                "formBusca" + opcao.charAt(0).toUpperCase() + opcao.slice(1)
+              )
+              .classList.add("active");
+          });
+        });
+
+        // Buscar por email
+        if (formBuscaEmail) {
+          formBuscaEmail.addEventListener("submit", function (e) {
+            e.preventDefault();
+            resultadosBusca.style.display = "block";
+            detalhesAgendamento.style.display = "none";
+          });
+        }
+
+        // Buscar por código
+        if (formBuscaCodigo) {
+          formBuscaCodigo.addEventListener("submit", function (e) {
+            e.preventDefault();
+            resultadosBusca.style.display = "block";
+            detalhesAgendamento.style.display = "none";
+          });
+        }
+
+        // Ver detalhes do agendamento
+        const botoesDetalhes = document.querySelectorAll(".btn-secondary");
+        botoesDetalhes.forEach((btn) => {
+          btn.addEventListener("click", function () {
+            resultadosBusca.style.display = "none";
+            detalhesAgendamento.style.display = "block";
+          });
+        });
+
+        // Voltar para a lista
+        if (btnVoltarLista) {
+          btnVoltarLista.addEventListener("click", function () {
+            resultadosBusca.style.display = "block";
+            detalhesAgendamento.style.display = "none";
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

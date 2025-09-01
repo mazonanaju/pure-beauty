@@ -1,0 +1,218 @@
+/* Página de Agendamento Completa */
+.pagina-agendamento {
+  padding: 80px 0;
+}
+
+.agendamento-container {
+  display: flex;
+  gap: 40px;
+}
+
+.agendamento-sidebar {
+  width: 250px;
+  flex-shrink: 0;
+}
+
+.agendamento-steps {
+  background-color: var(--white);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.step-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  color: var(--gray);
+}
+
+.step-item.active {
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.step-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: var(--light-gray);
+  margin-right: 10px;
+  color: var(--dark);
+}
+
+.step-item.active .step-number {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.agendamento-main {
+  flex: 1;
+}
+
+.agendamento-header {
+  margin-bottom: 30px;
+}
+
+.agendamento-header h1 {
+  color: var(--secondary);
+  margin-bottom: 10px;
+}
+
+.agendamento-header p {
+  color: var(--gray);
+}
+
+.agendamento-form {
+  background-color: var(--white);
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Calendário */
+.calendario {
+  margin-bottom: 30px;
+}
+
+.calendario-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.calendario-mes {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--secondary);
+}
+
+.calendario-navegacao button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: var(--gray);
+}
+
+.calendario-navegacao button:hover {
+  color: var(--primary);
+}
+
+.calendario-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+}
+
+.calendario-dia {
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.calendario-dia:hover {
+  background-color: var(--light);
+}
+
+.calendario-dia.disabled {
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+.calendario-dia.selected {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.calendario-dia-nome {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: var(--secondary);
+}
+
+.horarios-disponiveis {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.horario-btn {
+  background-color: var(--light-gray);
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.horario-btn:hover {
+  background-color: #e5e5e5;
+}
+
+.horario-btn.selected {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+/* Resumo do Agendamento */
+.resumo-agendamento {
+  background-color: var(--light);
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 30px;
+}
+
+.resumo-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.resumo-label {
+  font-weight: bold;
+  color: var(--dark);
+}
+
+.resumo-valor {
+  color: var(--gray);
+}
+
+/* Responsividade para agendamento */
+@media (max-width: 992px) {
+  .agendamento-container {
+    flex-direction: column;
+  }
+
+  .agendamento-sidebar {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .horarios-disponiveis {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .horarios-disponiveis {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .calendario-grid {
+    gap: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .horarios-disponiveis {
+    grid-template-columns: 1fr;
+  }
+}

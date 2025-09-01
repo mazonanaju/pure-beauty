@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cancelamento - Pure Beauty</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/paginas-internas.css" />
+    <link rel="stylesheet" href="/css/responsivo.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <a href="/view/index.html" class="logo">Pure Beauty</a>
+          <nav>
+            <ul>
+              <li><a href="/view/index.html">Home</a></li>
+              <li><a href="/view/servicos.html">Serviços</a></li>
+              <li><a href="/view/sobre.html">Sobre Nós</a></li>
+              <li><a href="/view/agenda.html" class="active">Agenda</a></li>
+              <li><a href="/view/galeria.html">Resultados</a></li>
+              <li><a href="/view/blog.html">Blog</a></li>
+              <li><a href="/view/contato.html">Contato</a></li>
+            </ul>
+          </nav>
+          <div class="header-buttons">
+            <a href="/view/area-cliente.html" class="btn-secondary"
+              >Área do Cliente</a
+            >
+            <a href="/view/agendamento.html" class="btn-primary"
+              >Agendar Consulta</a
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="pagina-interna">
+      <div class="container">
+        <div class="pagina-header">
+          <h1>Cancelamento de Agendamento</h1>
+          <p>Gostaríamos de entender o motivo do cancelamento</p>
+        </div>
+
+        <div class="cancelamento-content">
+          <div class="cancelamento-info">
+            <h2>Informações do Agendamento</h2>
+            <div class="agendamento-detalhes">
+              <div class="detalhe-item">
+                <span class="detalhe-label">Procedimento:</span>
+                <span class="detalhe-valor">Preenchimento Facial</span>
+              </div>
+              <div class="detalhe-item">
+                <span class="detalhe-label">Data e Hora:</span>
+                <span class="detalhe-valor">15/11/2023 às 14:00</span>
+              </div>
+              <div class="detalhe-item">
+                <span class="detalhe-label">Profissional:</span>
+                <span class="detalhe-valor">Dra. Maria Silva</span>
+              </div>
+              <div class="detalhe-item">
+                <span class="detalhe-label">Duração:</span>
+                <span class="detalhe-valor">60 minutos</span>
+              </div>
+              <div class="detalhe-item">
+                <span class="detalhe-label">Valor:</span>
+                <span class="detalhe-valor">R$ 800,00</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="cancelamento-form">
+            <h2>Motivo do Cancelamento</h2>
+            <form id="formCancelamento">
+              <div class="form-group">
+                <label for="motivo">Selecione o motivo principal:</label>
+                <select id="motivo" name="motivo" required>
+                  <option value="">Selecione um motivo</option>
+                  <option value="conflito-horario">Conflito de horário</option>
+                  <option value="imprevisto">Imprevisto pessoal</option>
+                  <option value="financeiro">Motivo financeiro</option>
+                  <option value="medo">Medo ou ansiedade</option>
+                  <option value="mudanca-decisao">Mudança de decisão</option>
+                  <option value="outro">Outro motivo</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="detalhes">Detalhes adicionais (opcional):</label>
+                <textarea
+                  id="detalhes"
+                  name="detalhes"
+                  rows="4"
+                  placeholder="Nos conte mais sobre o motivo do cancelamento..."
+                ></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="reagendamento">Deseja reagendar?</label>
+                <select id="reagendamento" name="reagendamento">
+                  <option value="">Selecione uma opção</option>
+                  <option value="sim">Sim, gostaria de reagendar</option>
+                  <option value="nao">Não, quero apenas cancelar</option>
+                </select>
+              </div>
+
+              <div class="reagendamento-opcoes" style="display: none">
+                <div class="form-group">
+                  <label for="nova-data">Nova data preferencial:</label>
+                  <input type="date" id="nova-data" name="nova-data" />
+                </div>
+                <div class="form-group">
+                  <label for="novo-horario">Novo horário preferencial:</label>
+                  <select id="novo-horario" name="novo-horario">
+                    <option value="">Selecione um horário</option>
+                    <option value="08:00">08:00</option>
+                    <option value="09:00">09:00</option>
+                    <option value="10:00">10:00</option>
+                    <option value="11:00">11:00</option>
+                    <option value="14:00">14:00</option>
+                    <option value="15:00">15:00</option>
+                    <option value="16:00">16:00</option>
+                    <option value="17:00">17:00</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="politica-cancelamento">
+                <h3>Política de Cancelamento</h3>
+                <p>
+                  De acordo com nossos termos, cancelamentos com menos de 24
+                  horas de antecedência estão sujeitos a taxa de 50% do valor do
+                  procedimento.
+                  <a href="/view/politicas.html">Ver política completa</a>.
+                </p>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="btn-primary">
+                  Confirmar Cancelamento
+                </button>
+                <a href="/view/area-cliente.html" class="btn-secondary"
+                  >Voltar</a
+                >
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="cancelamento-confirmacao" style="display: none">
+          <div class="confirmacao-icon">
+            <div style="font-size: 80px; color: #4caf50">✓</div>
+          </div>
+
+          <div class="confirmacao-mensagem">
+            <h2>Cancelamento Confirmado</h2>
+            <p>Seu agendamento foi cancelado com sucesso.</p>
+
+            <div class="confirmacao-detalhes">
+              <p><strong>Código do cancelamento:</strong> CAN-123456</p>
+              <p><strong>Data do cancelamento:</strong> 14/11/2023 às 10:30</p>
+              <p>
+                <strong>Status:</strong> Cancelamento sem taxa (realizado com
+                mais de 24h de antecedência)
+              </p>
+            </div>
+
+            <div class="confirmacao-acoes">
+              <a href="/view/agendamento.html" class="btn-primary"
+                >Fazer Novo Agendamento</a
+              >
+              <a href="/view/index.html" class="btn-secondary"
+                >Voltar à Página Inicial</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-col">
+            <h3>Pure Beauty</h3>
+            <p>
+              Excelência em tratamentos estéticos com segurança e resultados
+              comprovados.
+            </p>
+            <div class="social-links">
+              <a href="#"><span>FB</span></a>
+              <a href="#"><span>IG</span></a>
+              <a href="#"><span>WA</span></a>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h3>Serviços</h3>
+            <ul>
+              <li><a href="/view/servicos.html">Preenchimento Facial</a></li>
+              <li><a href="/view/servicos.html">Botox</a></li>
+              <li><a href="/view/servicos.html">Limpeza de Pele</a></li>
+              <li><a href="/view/servicos.html">Depilação a Laser</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Links Rápidos</h3>
+            <ul>
+              <li><a href="/view/sobre.html">Sobre Nós</a></li>
+              <li><a href="/view/blog.html">Blog</a></li>
+              <li><a href="/view/contato.html">Contato</a></li>
+              <li>
+                <a href="/view/politicas.html">Políticas de Privacidade</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Contato</h3>
+            <ul class="footer-contato">
+              <li><span>📍</span> Av. Paulista, 1000 - São Paulo</li>
+              <li><span>📞</span> (11) 9999-9999</li>
+              <li><span>✉️</span> contato@purebeauty.com.br</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>
+            &copy; 2023 Pure Beauty - Clínica de Estética. Todos os direitos
+            reservados.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/js/script.js"></script>
+    <script>
+      // Controle do formulário de cancelamento
+      document.addEventListener("DOMContentLoaded", function () {
+        const formCancelamento = document.getElementById("formCancelamento");
+        const selectReagendamento = document.getElementById("reagendamento");
+        const opcoesReagendamento = document.querySelector(
+          ".reagendamento-opcoes"
+        );
+        const cancelamentoContent = document.querySelector(
+          ".cancelamento-content"
+        );
+        const confirmacaoCancelamento = document.querySelector(
+          ".cancelamento-confirmacao"
+        );
+
+        // Mostrar/ocultar opções de reagendamento
+        if (selectReagendamento) {
+          selectReagendamento.addEventListener("change", function () {
+            if (this.value === "sim") {
+              opcoesReagendamento.style.display = "block";
+            } else {
+              opcoesReagendamento.style.display = "none";
+            }
+          });
+        }
+
+        // Envio do formulário
+        if (formCancelamento) {
+          formCancelamento.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            cancelamentoContent.style.display = "none";
+            confirmacaoCancelamento.style.display = "block";
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

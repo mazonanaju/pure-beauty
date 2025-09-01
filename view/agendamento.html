@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agendamento - Pure Beauty</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/agendamento.css" />
+    <link rel="stylesheet" href="/css/responsivo.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <a href="/view/index.html" class="logo">Pure Beauty</a>
+          <nav>
+            <ul>
+              <li><a href="/view/index.html">Home</a></li>
+              <li><a href="/view/servicos.html">Serviços</a></li>
+              <li><a href="/view/sobre.html">Sobre Nós</a></li>
+              <li><a href="/view/agenda.html" class="active">Agenda</a></li>
+              <li><a href="/view/galeria.html">Resultados</a></li>
+              <li><a href="/view/blog.html">Blog</a></li>
+              <li><a href="/view/contato.html">Contato</a></li>
+            </ul>
+          </nav>
+          <div class="header-buttons">
+            <a href="/view/area-cliente.html" class="btn-secondary"
+              >Área do Cliente</a
+            >
+            <a href="/view/agendamento.html" class="btn-primary"
+              >Agendar Consulta</a
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="pagina-agendamento">
+      <div class="container">
+        <div class="agendamento-container">
+          <div class="agendamento-sidebar">
+            <div class="agendamento-steps">
+              <div class="step-item active">
+                <div class="step-number">1</div>
+                <div class="step-text">Serviço</div>
+              </div>
+              <div class="step-item">
+                <div class="step-number">2</div>
+                <div class="step-text">Profissional</div>
+              </div>
+              <div class="step-item">
+                <div class="step-number">3</div>
+                <div class="step-text">Data & Hora</div>
+              </div>
+              <div class="step-item">
+                <div class="step-number">4</div>
+                <div class="step-text">Seus Dados</div>
+              </div>
+              <div class="step-item">
+                <div class="step-number">5</div>
+                <div class="step-text">Confirmação</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="agendamento-main">
+            <div class="agendamento-header">
+              <h1>Agendar Procedimento</h1>
+              <p>
+                Preencha as informações abaixo para agendar seu procedimento
+              </p>
+            </div>
+
+            <div class="agendamento-form">
+              <form id="formAgendamentoCompleto">
+                <div class="form-step active" id="step1">
+                  <div class="form-group">
+                    <label for="servico">Selecione o procedimento:</label>
+                    <select id="servico" name="servico" required>
+                      <option value="">Selecione um procedimento</option>
+                      <option value="preenchimento-facial">
+                        Preenchimento Facial
+                      </option>
+                      <option value="botox">Botox</option>
+                      <option value="limpeza-pele">Limpeza de Pele</option>
+                      <option value="laser">Depilação a Laser</option>
+                      <option value="lifting">Lifting Facial</option>
+                    </select>
+                  </div>
+                  <div class="form-navigation">
+                    <div></div>
+                    <button
+                      type="button"
+                      class="btn-primary"
+                      onclick="nextStep(2)"
+                    >
+                      Próximo
+                    </button>
+                  </div>
+                </div>
+
+                <div class="form-step" id="step2">
+                  <div class="form-group">
+                    <label for="profissional"
+                      >Selecione o profissional (opcional):</label
+                    >
+                    <select id="profissional" name="profissional">
+                      <option value="">Qualquer profissional disponível</option>
+                      <option value="dra-silva">Dra. Maria Silva</option>
+                      <option value="dr-santos">Dr. João Santos</option>
+                      <option value="dra-oliveira">Dra. Ana Oliveira</option>
+                    </select>
+                  </div>
+                  <div class="form-navigation">
+                    <button
+                      type="button"
+                      class="btn-voltar"
+                      onclick="prevStep(1)"
+                    >
+                      Voltar
+                    </button>
+                    <button
+                      type="button"
+                      class="btn-primary"
+                      onclick="nextStep(3)"
+                    >
+                      Próximo
+                    </button>
+                  </div>
+                </div>
+
+                <div class="form-step" id="step3">
+                  <div class="calendario">
+                    <div class="calendario-header">
+                      <div class="calendario-mes">Novembro 2023</div>
+                      <div class="calendario-navegacao">
+                        <button>&lt;</button>
+                        <button>&gt;</button>
+                      </div>
+                    </div>
+                    <div class="calendario-grid">
+                      <div class="calendario-dia-nome">Dom</div>
+                      <div class="calendario-dia-nome">Seg</div>
+                      <div class="calendario-dia-nome">Ter</div>
+                      <div class="calendario-dia-nome">Qua</div>
+                      <div class="calendario-dia-nome">Qui</div>
+                      <div class="calendario-dia-nome">Sex</div>
+                      <div class="calendario-dia-nome">Sáb</div>
+
+                      <!-- Dias do calendário serão preenchidos via JavaScript -->
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Horários disponíveis:</label>
+                    <div class="horarios-disponiveis">
+                      <button type="button" class="horario-btn">08:00</button>
+                      <button type="button" class="horario-btn">09:00</button>
+                      <button type="button" class="horario-btn">10:00</button>
+                      <button type="button" class="horario-btn">11:00</button>
+                      <button type="button" class="horario-btn">14:00</button>
+                      <button type="button" class="horario-btn">15:00</button>
+                      <button type="button" class="horario-btn">16:00</button>
+                      <button type="button" class="horario-btn">17:00</button>
+                    </div>
+                  </div>
+
+                  <div class="form-navigation">
+                    <button
+                      type="button"
+                      class="btn-voltar"
+                      onclick="prevStep(2)"
+                    >
+                      Voltar
+                    </button>
+                    <button
+                      type="button"
+                      class="btn-primary"
+                      onclick="nextStep(4)"
+                    >
+                      Próximo
+                    </button>
+                  </div>
+                </div>
+
+                <div class="form-step" id="step4">
+                  <div class="form-group">
+                    <label for="nome">Nome completo:</label>
+                    <input type="text" id="nome" name="nome" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" id="telefone" name="telefone" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="observacoes">Observações (opcional):</label>
+                    <textarea
+                      id="observacoes"
+                      name="observacoes"
+                      rows="3"
+                    ></textarea>
+                  </div>
+
+                  <div class="resumo-agendamento">
+                    <h3>Resumo do Agendamento</h3>
+                    <div class="resumo-item">
+                      <span class="resumo-label">Procedimento:</span>
+                      <span class="resumo-valor" id="resumo-servico">-</span>
+                    </div>
+                    <div class="resumo-item">
+                      <span class="resumo-label">Profissional:</span>
+                      <span class="resumo-valor" id="resumo-profissional"
+                        >-</span
+                      >
+                    </div>
+                    <div class="resumo-item">
+                      <span class="resumo-label">Data:</span>
+                      <span class="resumo-valor" id="resumo-data">-</span>
+                    </div>
+                    <div class="resumo-item">
+                      <span class="resumo-label">Horário:</span>
+                      <span class="resumo-valor" id="resumo-horario">-</span>
+                    </div>
+                  </div>
+
+                  <div class="form-navigation">
+                    <button
+                      type="button"
+                      class="btn-voltar"
+                      onclick="prevStep(3)"
+                    >
+                      Voltar
+                    </button>
+                    <button type="submit" class="btn-primary">
+                      Finalizar Agendamento
+                    </button>
+                  </div>
+                </div>
+
+                <div class="form-step" id="step5">
+                  <div class="text-center">
+                    <div
+                      style="
+                        font-size: 60px;
+                        color: #4caf50;
+                        margin-bottom: 20px;
+                      "
+                    >
+                      ✓
+                    </div>
+                    <h2>Agendamento Confirmado!</h2>
+                    <p>
+                      Seu agendamento foi realizado com sucesso. Em breve
+                      enviaremos um e-mail de confirmação.
+                    </p>
+
+                    <div class="resumo-agendamento">
+                      <h3>Detalhes do Agendamento</h3>
+                      <div class="resumo-item">
+                        <span class="resumo-label">Código:</span>
+                        <span class="resumo-valor">PB123456</span>
+                      </div>
+                      <div class="resumo-item">
+                        <span class="resumo-label">Procedimento:</span>
+                        <span class="resumo-valor" id="confirmacao-servico"
+                          >-</span
+                        >
+                      </div>
+                      <div class="resumo-item">
+                        <span class="resumo-label">Profissional:</span>
+                        <span class="resumo-valor" id="confirmacao-profissional"
+                          >-</span
+                        >
+                      </div>
+                      <div class="resumo-item">
+                        <span class="resumo-label">Data:</span>
+                        <span class="resumo-valor" id="confirmacao-data"
+                          >-</span
+                        >
+                      </div>
+                      <div class="resumo-item">
+                        <span class="resumo-label">Horário:</span>
+                        <span class="resumo-valor" id="confirmacao-horario"
+                          >-</span
+                        >
+                      </div>
+                    </div>
+
+                    <div style="margin-top: 30px">
+                      <a href="/view/index.html" class="btn-primary"
+                        >Voltar à Página Inicial</a
+                      >
+                      <a
+                        href="/view/area-cliente.html"
+                        class="btn-secondary"
+                        style="margin-left: 10px"
+                        >Área do Cliente</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-col">
+            <h3>Pure Beauty</h3>
+            <p>
+              Excelência em tratamentos estéticos com segurança e resultados
+              comprovados.
+            </p>
+            <div class="social-links">
+              <a href="#"><span>FB</span></a>
+              <a href="#"><span>IG</span></a>
+              <a href="#"><span>WA</span></a>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h3>Serviços</h3>
+            <ul>
+              <li><a href="/view/servicos.html">Preenchimento Facial</a></li>
+              <li><a href="/view/servicos.html">Botox</a></li>
+              <li><a href="/view/servicos.html">Limpeza de Pele</a></li>
+              <li><a href="/view/servicos.html">Depilação a Laser</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Links Rápidos</h3>
+            <ul>
+              <li><a href="/view/sobre.html">Sobre Nós</a></li>
+              <li><a href="/view/blog.html">Blog</a></li>
+              <li><a href="/view/contato.html">Contato</a></li>
+              <li>
+                <a href="/view/politicas.html">Políticas de Privacidade</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Contato</h3>
+            <ul class="footer-contato">
+              <li><span>📍</span> Av. Paulista, 1000 - São Paulo</li>
+              <li><span>📞</span> (11) 9999-9999</li>
+              <li><span>✉️</span> contato@purebeauty.com.br</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>
+            &copy; 2023 Pure Beauty - Clínica de Estética. Todos os direitos
+            reservados.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/js/script.js"></script>
+    <script src="/js/agendamento.js"></script>
+  </body>
+</html>

@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Área do Cliente - Pure Beauty</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/paginas-internas.css" />
+    <link rel="stylesheet" href="/css/responsivo.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <a href="/view/index.html" class="logo">Pure Beauty</a>
+          <nav>
+            <ul>
+              <li><a href="/view/index.html">Home</a></li>
+              <li><a href="/view/servicos.html">Serviços</a></li>
+              <li><a href="/view/sobre.html">Sobre Nós</a></li>
+              <li><a href="/view/agenda.html" class="active">Agenda</a></li>
+              <li><a href="/view/galeria.html">Resultados</a></li>
+              <li><a href="/view/blog.html">Blog</a></li>
+              <li><a href="/view/contato.html">Contato</a></li>
+            </ul>
+          </nav>
+          <div class="header-buttons">
+            <a href="/view/area-cliente.html" class="btn-secondary"
+              >Área do Cliente</a
+            >
+            <a href="/view/agendamento.html" class="btn-primary"
+              >Agendar Consulta</a
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="pagina-interna">
+      <div class="container">
+        <div class="pagina-header">
+          <h1>Área do Cliente</h1>
+          <p>
+            Acesse sua conta ou cadastre-se para gerenciar seus agendamentos
+          </p>
+        </div>
+
+        <div class="area-cliente-container">
+          <div class="login-form">
+            <h2>Já sou cliente</h2>
+            <form id="formLogin">
+              <div class="form-group">
+                <label for="email-login">E-mail:</label>
+                <input type="email" id="email-login" name="email" required />
+              </div>
+              <div class="form-group">
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" required />
+              </div>
+              <div class="form-options">
+                <label>
+                  <input type="checkbox" name="lembrar" /> Lembrar-me
+                </label>
+                <a href="/view/recuperar-senha.html">Esqueci minha senha</a>
+              </div>
+              <button type="submit" class="btn-primary">Entrar</button>
+            </form>
+          </div>
+
+          <div class="divisor">
+            <span>ou</span>
+          </div>
+
+          <div class="cadastro-form">
+            <h2>Novo cliente</h2>
+            <form id="formCadastro">
+              <div class="form-group">
+                <label for="nome-cadastro">Nome completo:</label>
+                <input type="text" id="nome-cadastro" name="nome" required />
+              </div>
+              <div class="form-group">
+                <label for="email-cadastro">E-mail:</label>
+                <input type="email" id="email-cadastro" name="email" required />
+              </div>
+              <div class="form-group">
+                <label for="telefone-cadastro">Telefone:</label>
+                <input
+                  type="tel"
+                  id="telefone-cadastro"
+                  name="telefone"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="senha-cadastro">Senha:</label>
+                <input
+                  type="password"
+                  id="senha-cadastro"
+                  name="senha"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="confirmar-senha">Confirmar senha:</label>
+                <input
+                  type="password"
+                  id="confirmar-senha"
+                  name="confirmar-senha"
+                  required
+                />
+              </div>
+              <div class="form-termos">
+                <label>
+                  <input type="checkbox" name="termos" required />
+                  Aceito os <a href="/view/politicas.html">termos de uso</a> e
+                  <a href="/view/politicas.html">políticas de privacidade</a>
+                </label>
+              </div>
+              <button type="submit" class="btn-primary">Criar conta</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="area-cliente-logado" style="display: none">
+          <div class="cliente-header">
+            <h2>Olá, <span id="nome-cliente">Maria Silva</span>!</h2>
+            <a href="#" class="btn-secondary" id="btnSair">Sair</a>
+          </div>
+
+          <div class="cliente-menu">
+            <button class="menu-btn active" data-tab="agendamentos">
+              Meus Agendamentos
+            </button>
+            <button class="menu-btn" data-tab="dados">Meus Dados</button>
+            <button class="menu-btn" data-tab="favoritos">
+              Serviços Favoritos
+            </button>
+            <button class="menu-btn" data-tab="historico">Histórico</button>
+          </div>
+
+          <div class="cliente-conteudo">
+            <div class="conteudo-tab active" id="agendamentos">
+              <h3>Próximos Agendamentos</h3>
+              <div class="agendamentos-lista">
+                <div class="agendamento-item">
+                  <div class="agendamento-info">
+                    <h4>Preenchimento Facial</h4>
+                    <p>15/11/2023 às 14:00</p>
+                    <p>Dra. Maria Silva</p>
+                  </div>
+                  <div class="agendamento-acoes">
+                    <button class="btn-secondary">Remarcar</button>
+                    <button class="btn-cancelar">Cancelar</button>
+                  </div>
+                </div>
+
+                <div class="agendamento-item">
+                  <div class="agendamento-info">
+                    <h4>Limpeza de Pele</h4>
+                    <p>22/11/2023 às 10:00</p>
+                    <p>Dra. Ana Oliveira</p>
+                  </div>
+                  <div class="agendamento-acoes">
+                    <button class="btn-secondary">Remarcar</button>
+                    <button class="btn-cancelar">Cancelar</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="novo-agendamento">
+                <a href="/view/agendamento.html" class="btn-primary"
+                  >Fazer novo agendamento</a
+                >
+              </div>
+            </div>
+
+            <div class="conteudo-tab" id="dados">
+              <h3>Meus Dados Pessoais</h3>
+              <form id="formDados">
+                <div class="form-group">
+                  <label for="cliente-nome">Nome completo:</label>
+                  <input
+                    type="text"
+                    id="cliente-nome"
+                    name="nome"
+                    value="Maria Silva"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="cliente-email">E-mail:</label>
+                  <input
+                    type="email"
+                    id="cliente-email"
+                    name="email"
+                    value="maria@email.com"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="cliente-telefone">Telefone:</label>
+                  <input
+                    type="tel"
+                    id="cliente-telefone"
+                    name="telefone"
+                    value="(11) 99999-9999"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="cliente-nascimento">Data de nascimento:</label>
+                  <input
+                    type="date"
+                    id="cliente-nascimento"
+                    name="nascimento"
+                    value="1985-05-15"
+                  />
+                </div>
+                <button type="submit" class="btn-primary">
+                  Salvar alterações
+                </button>
+              </form>
+            </div>
+
+            <div class="conteudo-tab" id="favoritos">
+              <h3>Serviços Favoritos</h3>
+              <div class="favoritos-lista">
+                <div class="favorito-item">
+                  <h4>Preenchimento Facial</h4>
+                  <p>
+                    Realce seus traços com nosso preenchimento de ácido
+                    hialurônico.
+                  </p>
+                  <div class="favorito-acoes">
+                    <a href="/view/agendamento.html" class="btn-primary"
+                      >Agendar</a
+                    >
+                    <button class="btn-secondary">Remover</button>
+                  </div>
+                </div>
+
+                <div class="favorito-item">
+                  <h4>Botox</h4>
+                  <p>Suavize linhas de expressão e rejuveneça sua aparência.</p>
+                  <div class="favorito-acoes">
+                    <a href="/view/agendamento.html" class="btn-primary"
+                      >Agendar</a
+                    >
+                    <button class="btn-secondary">Remover</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="conteudo-tab" id="historico">
+              <h3>Histórico de Procedimentos</h3>
+              <div class="historico-lista">
+                <div class="historico-item">
+                  <h4>Limpeza de Pele</h4>
+                  <p>Realizado em: 10/10/2023</p>
+                  <p>Profissional: Dra. Ana Oliveira</p>
+                  <div class="avaliacao">
+                    <span class="avaliacao-titulo">Avaliação:</span>
+                    <div class="estrelas">★★★★★</div>
+                  </div>
+                </div>
+
+                <div class="historico-item">
+                  <h4>Botox</h4>
+                  <p>Realizado em: 15/09/2023</p>
+                  <p>Profissional: Dra. Maria Silva</p>
+                  <div class="avaliacao">
+                    <span class="avaliacao-titulo">Avaliação:</span>
+                    <div class="estrelas">★★★★☆</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-col">
+            <h3>Pure Beauty</h3>
+            <p>
+              Excelência em tratamentos estéticos com segurança e resultados
+              comprovados.
+            </p>
+            <div class="social-links">
+              <a href="#"><span>FB</span></a>
+              <a href="#"><span>IG</span></a>
+              <a href="#"><span>WA</span></a>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h3>Serviços</h3>
+            <ul>
+              <li><a href="/view/servicos.html">Preenchimento Facial</a></li>
+              <li><a href="/view/servicos.html">Botox</a></li>
+              <li><a href="/view/servicos.html">Limpeza de Pele</a></li>
+              <li><a href="/view/servicos.html">Depilação a Laser</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Links Rápidos</h3>
+            <ul>
+              <li><a href="/view/sobre.html">Sobre Nós</a></li>
+              <li><a href="/view/blog.html">Blog</a></li>
+              <li><a href="/view/contato.html">Contato</a></li>
+              <li>
+                <a href="/view/politicas.html">Políticas de Privacidade</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Contato</h3>
+            <ul class="footer-contato">
+              <li><span>📍</span> Av. Paulista, 1000 - São Paulo</li>
+              <li><span>📞</span> (11) 9999-9999</li>
+              <li><span>✉️</span> contato@purebeauty.com.br</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>
+            &copy; 2023 Pure Beauty - Clínica de Estética. Todos os direitos
+            reservados.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/js/script.js"></script>
+    <script>
+      // Controle de login/cadastro
+      document.addEventListener("DOMContentLoaded", function () {
+        const formLogin = document.getElementById("formLogin");
+        const formCadastro = document.getElementById("formCadastro");
+        const areaLogin = document.querySelector(".area-cliente-container");
+        const areaLogado = document.querySelector(".area-cliente-logado");
+
+        // Simulação de login
+        if (formLogin) {
+          formLogin.addEventListener("submit", function (e) {
+            e.preventDefault();
+            areaLogin.style.display = "none";
+            areaLogado.style.display = "block";
+          });
+        }
+
+        // Simulação de cadastro
+        if (formCadastro) {
+          formCadastro.addEventListener("submit", function (e) {
+            e.preventDefault();
+            areaLogin.style.display = "none";
+            areaLogado.style.display = "block";
+          });
+        }
+
+        // Botão sair
+        const btnSair = document.getElementById("btnSair");
+        if (btnSair) {
+          btnSair.addEventListener("click", function (e) {
+            e.preventDefault();
+            areaLogin.style.display = "flex";
+            areaLogado.style.display = "none";
+          });
+        }
+
+        // Menu de abas
+        const menuBtns = document.querySelectorAll(".menu-btn");
+        const conteudoTabs = document.querySelectorAll(".conteudo-tab");
+
+        menuBtns.forEach((btn) => {
+          btn.addEventListener("click", function () {
+            const tabId = this.getAttribute("data-tab");
+
+            // Remover classe active de todos os botões e conteúdos
+            menuBtns.forEach((b) => b.classList.remove("active"));
+            conteudoTabs.forEach((t) => t.classList.remove("active"));
+
+            // Adicionar classe active ao botão clicado
+            this.classList.add("active");
+
+            // Mostrar o conteúdo correspondente
+            document.getElementById(tabId).classList.add("active");
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
