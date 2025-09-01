@@ -1611,3 +1611,101 @@
     grid-template-columns: 1fr;
   }
 }
+/* Estilos para páginas internas */
+.pagina-interna {
+  padding: 80px 0;
+}
+
+.pagina-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.pagina-header h1 {
+  font-size: 36px;
+  color: var(--secondary);
+  margin-bottom: 15px;
+}
+
+.pagina-header p {
+  color: var(--gray);
+  font-size: 18px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Página Sobre */
+/* ... Outros estilos ... */
+
+/* Área do Cliente */
+.area-cliente-container {
+  display: flex;
+  justify-content: center; /* Centraliza o formulário */
+  gap: 50px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.login-form,
+.cadastro-form {
+  flex: 1;
+  max-width: 450px; /* Limita a largura dos formulários para centralização */
+  background-color: var(--white);
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.login-form h2,
+.cadastro-form h2 {
+  color: var(--secondary);
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.form-options a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.form-termos {
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.form-termos a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+/* Remove o divisor, pois as páginas agora são separadas */
+.divisor {
+  display: none;
+}
+
+/* Estilos de layout para a área do cliente logado - permanecem inalterados */
+.area-cliente-logado {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.cliente-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+/* ... Outros estilos ... */
